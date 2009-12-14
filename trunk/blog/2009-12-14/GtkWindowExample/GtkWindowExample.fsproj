@@ -5,13 +5,14 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{73602f35-8812-4b4f-b958-5e63ac4204a4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>fconsole</RootNamespace>
-    <AssemblyName>HelloFoundation</AssemblyName>
+    <ProjectGuid>{d747bbfc-4760-499c-9f67-a89a7a3cafe9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gtk1</RootNamespace>
+    <AssemblyName>Gtk1</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <Name>HelloFoundation</Name>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <Name>GtkWindowExample</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,21 +33,37 @@
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <StartAction>Project</StartAction>
+    <StartProgram>C:\Program Files (x86)\Mono-2.4.3\bin\mono.exe</StartProgram>
+    <StartArguments>
+    </StartArguments>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Monobjc">
-      <HintPath>C:\Users\ctaggart\Projects\fmac\HelloFoundation\Monobjc.dll</HintPath>
+    <Reference Include="atk-sharp">
+      <HintPath>C:\Program Files (x86)\Mono-2.4.3\lib\mono\gtk-sharp-2.0\atk-sharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Monobjc.Cocoa">
-      <HintPath>C:\Users\ctaggart\Projects\fmac\HelloFoundation\Monobjc.Cocoa.dll</HintPath>
+    <Reference Include="FSharp.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="gdk-sharp">
+      <HintPath>C:\Program Files (x86)\Mono-2.4.3\lib\mono\gtk-sharp-2.0\gdk-sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="glib-sharp">
+      <HintPath>C:\Program Files (x86)\Mono-2.4.3\lib\mono\gtk-sharp-2.0\glib-sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="gtk-sharp">
+      <HintPath>C:\Program Files (x86)\Mono-2.4.3\lib\mono\gtk-sharp-2.0\gtk-sharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core" />
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HelloFoundation.fs" />
+    <Compile Include="GtkWindowExample.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

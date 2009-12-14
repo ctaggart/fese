@@ -8,7 +8,7 @@
     <ProjectGuid>{d747bbfc-4760-499c-9f67-a89a7a3cafe9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Gtk1</RootNamespace>
-    <AssemblyName>Gtk1</AssemblyName>
+    <AssemblyName>GtkWindowExample</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

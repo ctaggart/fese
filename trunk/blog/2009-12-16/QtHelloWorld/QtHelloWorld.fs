@@ -1,4 +1,4 @@
-﻿module QtHellWorld
+﻿module QtHelloWorld
 
 open com.trolltech.qt.gui
 

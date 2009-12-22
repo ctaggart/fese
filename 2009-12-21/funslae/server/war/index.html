@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+  <title>funslae</title>
+  <style type="text/css">
+  html, body {
+    height: 100%;
+    overflow: auto;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  #silverlightControlHost {
+    height: 100%;
+    text-align:center;
+  }
+  </style>
+  <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAxQsxL2M69pdICjgBh6qFyBSVlvern5WJ0S-0kwfnz8CcfbPR4BSZyqsuS3cy-Xm5fbKzRiHQyjNxgg"></script>
+  <script type="text/javascript" src="Silverlight.js"></script>
+  <script type="text/javascript">
+    var clientLocation;
+
+    function centerMap() {
+      if (clientLocation) {
+        var latitude = google.loader.ClientLocation.latitude;
+        var longitude = google.loader.ClientLocation.longitude;
+        if (latitude && longitude) {
+          var map = document.getElementById("silverlightControl").Content.Map;
+          map.SetCenter(latitude, longitude);
+          map.SetZoomLevel(10); // miles
+        }
+      }
+    }
+
+    function loadSilverlight() {
+      clientLocation = google.loader.ClientLocation;
+      Silverlight.createObject(
+        "funslae.xap",
+        document.getElementById("silverlightControlHost"),
+        "silverlightControl",
+        { width: "100%", height: "100%", background: "white", minRuntimeVersion: "3.0.40818.0", autoUpgrade: "true" },
+        { onLoad: "centerMap" }
+      );
+    }
+
+    google.setOnLoadCallback(loadSilverlight);
+    google.load("maps", "2");
+  </script>
+</head>
+<body>
+  <div id="silverlightControlHost"></div>
+</body>
+</html>

@@ -21,15 +21,20 @@
   <script type="text/javascript">
     var clientLocation;
 
-    function centerMap(){
-      if(clientLocation){
+    function centerMap() {
+      if (clientLocation) {
         var latitude = google.loader.ClientLocation.latitude;
         var longitude = google.loader.ClientLocation.longitude;
-        document.getElementById("silverlightControl").Content.Map.SetCenter(latitude, longitude);
+        if (latitude && longitude) {
+          var map = document.getElementById("silverlightControl").Content.Map;
+          map.SetCenter(latitude, longitude);
+          map.SetZoomLevel(10); // miles
+        }
+
       }
     }
 
-    function loadSilverlight(){
+    function loadSilverlight() {
       clientLocation = google.loader.ClientLocation;
       Silverlight.createObject(
         "funslae.xap",

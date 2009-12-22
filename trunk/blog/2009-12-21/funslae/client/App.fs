@@ -11,8 +11,11 @@ open Microsoft.Maps.MapControl.Core
 type ScriptableMap() =
   inherit Map()
   [<ScriptableMember>]
-  member this.SetCenter(latitude:float, longitude:float) = 
+  member this.SetCenter(latitude, longitude) = 
     this.Center <- Location(latitude, longitude)
+  [<ScriptableMember>]
+  member this.SetZoomLevel(miles) =
+    this.ZoomLevel <- miles
 
 type App() as app =
   inherit Application()
@@ -34,7 +37,6 @@ type App() as app =
             )
       }
 
-      map.ZoomLevel <- 10. // miles
       HtmlPage.RegisterScriptableObject("Map", map)
       ()
     )
